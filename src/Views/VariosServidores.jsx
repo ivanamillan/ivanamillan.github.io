@@ -37,7 +37,7 @@ const VariosServidores = () => {
   }
   
   // Po
-  const chanceTheSystemIsEmpty = ({ lambda, mu, usageOfTheSystem, servidores }) => {
+  const chanceTheSystemIsEmpty = ({ usageOfTheSystem, servidores }) => {
     let counter = 0;
     const CONSTANT_CHANCE = (((usageOfTheSystem ** servidores) / (factorial(servidores) * (1 - (usageOfTheSystem / servidores)))));
     let totalSumChance = 0;
@@ -109,7 +109,7 @@ const chanceToEnterTheSystem = ({ lambda, mu, usageOfTheSystem, servidores, limi
 }
 
 // Po
-const chanceTheSystemIsEmptyWithLimit = ({ lambda, mu, usageOfTheSystem, servidores, limite }) => {
+const chanceTheSystemIsEmptyWithLimit = ({ usageOfTheSystem, servidores, limite }) => {
   let CONSTANT_CHANCE = 0;
   if (usageOfTheSystem / servidores === 1) {
     CONSTANT_CHANCE = (((usageOfTheSystem ** servidores) / factorial(servidores)) * (limite - servidores + 1));
@@ -205,10 +205,8 @@ const chanceTheyAreOnSystemDetailsWithLimit = ({ clientsAmount = 100, lambda, mu
     e.preventDefault()
     if(lambda===0 || mu===0 || servidores===0){
       setValidacion('lambda,mu o los servidores no pueden ser igual a 0')
-  } else if(lambda>mu){
-    setValidacion('lambda no puede ser mayor a mu ')
   }
-        limite===0 ? multipleservidoresWithNoLimit() : multipleservidoresWithLimit()
+  limite===0 || limite==='' ?  multipleservidoresWithNoLimit() : multipleservidoresWithLimit()
   }
 
 
