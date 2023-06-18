@@ -217,9 +217,9 @@ const oneServerWithLimit = () => {
         <div className='flex justify-center'>
           <div className='grid grid-cols-3 rounded p-4  bg-slate-400'>
             <div className='col-span-3 text-center pb-2 text-xl'><h2>Calculadora</h2></div>
-            <input type='number' className='border mx-5 my-2 py-1 px-1 rounded' value={lambda} onChange={handleNum1Change} placeholder='lambda...' required/>
-            <input type='number' className='border mx-5 my-2 py-1 px-1 rounded'  value={mu} onChange={handleNum2Change} placeholder='mu...' required/>
-            <input type='number' className='border mx-5 my-2 py-1 px-1 rounded'  value={limite} onChange={handleNum4Change} placeholder='limite...' required/>
+            <input step="0" min={1} type='number' className='border mx-5 my-2 py-1 px-1 rounded' value={lambda} onChange={handleNum1Change} placeholder='lambda...' required/>
+            <input step="0" min={1} type='number' className='border mx-5 my-2 py-1 px-1 rounded'  value={mu} onChange={handleNum2Change} placeholder='mu...' required/>
+            <input  step="0" min={1} type='number' className='border mx-5 my-2 py-1 px-1 rounded'  value={limite} onChange={handleNum4Change} placeholder='limite...' required/>
             <div className='flex justify-center col-span-3 py-2'><button onClick={handleClick} className='bg-sky-200 px-8 text-lg rounded text-black py-2'>Calculo</button></div>
           </div>
         </div>
